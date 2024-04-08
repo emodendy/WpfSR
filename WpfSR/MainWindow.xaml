@@ -8,15 +8,16 @@
         Title="MainWindow" Height="450" Width="801">
     <Grid>
         <ComboBox x:Name="type" HorizontalAlignment="Left" Margin="45,37,0,0" VerticalAlignment="Top" Width="185" SelectionChanged="ComboBox_SelectionChanged" Height="30" FontFamily="Javanese Text"/>
-        <TextBox x:Name="first" HorizontalAlignment="Left" Margin="45,130,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="100" Height="30"/>
+        <TextBox x:Name="first" HorizontalAlignment="Left" Margin="45,130,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="100" Height="30" TextChanged="first_TextChanged" />
         <Label Content="Выберите тип соединения&#xD;&#xA;" HorizontalAlignment="Left" Margin="45,7,0,0" VerticalAlignment="Top" Height="30" FontFamily="Javanese Text"/>
-        <TextBox x:Name="second" HorizontalAlignment="Left" Margin="45,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="100" Height="30"/>
+        <TextBox x:Name="second" HorizontalAlignment="Left" Margin="45,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="100" Height="30" TextChanged="second_TextChanged"/>
         <TextBlock HorizontalAlignment="Left" Margin="45,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="27"><Run Text="Введите сопротивление 1 резист"/><Run Language="ru-ru" Text="о"/><Run Text="ра"/><LineBreak/><Run/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Margin="45,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="27"><Run Text="Введите сопротивление "/><Run Language="ru-ru" Text="2"/><Run Text=" резист"/><Run Text="о"/><Run Text="ра"/><LineBreak/><Run/></TextBlock>
         <Button Content="Очистить поля" HorizontalAlignment="Left" Margin="671,37,0,0" VerticalAlignment="Top" Click="Button_Click" Width="94" Height="30" Background="#FF2245AF" Foreground="White"/>
-        <Label Content="Ваш результат:" HorizontalAlignment="Left" Margin="45,256,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="result" Content="Ваш результат:" HorizontalAlignment="Left" Margin="45,256,0,0" VerticalAlignment="Top"/>
         <Image x:Name="posled" Margin="358,90,239,289" Source="/Image3.png" Stretch="Fill" Visibility="Hidden"/>
         <Image x:Name="parallel" Margin="372,90,253,289" Source="/Image4.png" Stretch="Fill" Visibility="Hidden"/>
+        <Button Content="Вычислить" HorizontalAlignment="Left" Margin="256,0,0,0" VerticalAlignment="Center" Background="#FF2245AF" Foreground="White" Width="75" Click="Button_Click_1" Height="30"/>
 
     </Grid>
 </Window>
