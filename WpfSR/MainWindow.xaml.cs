@@ -57,7 +57,7 @@ namespace WpfSR
             {
                 if (Convert.ToDouble(first.Text) != 0 || Convert.ToDouble(first.Text) >= 0)
                 {
-                    first_rez = Convert.ToInt32(first.Text);
+                    first_rez = Convert.ToDouble(first.Text);
                 }
                 else
                 {
@@ -74,11 +74,23 @@ namespace WpfSR
         {
             if (type.SelectedItem == "Последовательное")
             {
-                result.Content = $"Ваш результат {first_rez + second_rez}";
+                if (first_rez + second_rez < 10000)
+                result.Content = $"Ваш результат {first_rez + second_rez} Ом";
+                else
+                {
+                result.Content = $"Ваш результат {(first_rez + second_rez)/1000} КОм";
+                }
             }
             else if (type.SelectedItem == "Параллельное")
             {
-                result.Content = $"Ваш результат {first_rez * second_rez/(first_rez + second_rez)}";
+                if (first_rez * second_rez / (first_rez + second_rez) < 10000)
+                {
+                    result.Content = $"Ваш результат {first_rez * second_rez / (first_rez + second_rez)} Ом";
+                }
+                else
+                {
+                    result.Content = $"Ваш результат {(first_rez * second_rez / (first_rez + second_rez))/1000} КОм";
+                }
             }else
             {
                 MessageBox.Show("Выберите тип соединения!");
@@ -91,7 +103,7 @@ namespace WpfSR
             {
                 if (Convert.ToDouble(second.Text) != 0 || Convert.ToDouble(second.Text) >= 0)
                 {
-                    second_rez = Convert.ToInt32(second.Text);
+                    second_rez = Convert.ToDouble(second.Text);
                 }
                 else
                 {
